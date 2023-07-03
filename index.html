@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Player Dramasabay</title>
+</head>
+<body>
+	<div class='video'>
+		<script src="https://use.fontawesome.com/20603b964f.js"></script>
+		<script type="text/javascript" src="https://content.jwplatform.com/libraries/LJ361JYj.js"></script>
+		<script type="text/javascript">jwplayer.key = '=';</script>
+		<div id="myElement"></div>
+		<script type="text/javascript">
+
+		  jwplayer("myElement").setup({
+			image: "",
+			aspectratio: "16:9",
+			width: '100%',
+			aspectratio: '16:9',
+			autostart: true,
+			file: 'https://bigf.bigo.sg/asia_live/V4s7/1HLpbx.mp4',
+			abouttext: 'FILMKACA',
+			aboutlink: 'http://filmkaca.xyz',
+			captions: { color: '#ffb800', fontSize: 30, backgroundOpacity: 0 },
+			sharing: {
+			  sites: ['facebook', 'twitter', 'tumblr', 'googleplus', { icon: '//support-static.jwplayer.com/images/awesome.svg', src: 'http://www.jwplayer.com/?', label: 'jwplayer' }],
+			  code: encodeURI("<iframe src='<?php echo $sharing;?>' width='480' height='320'></iframe>"),
+			  link: "<?php echo $sharing;?>"
+			}
+		  });
+
+		  let i = 0;
+
+		  setInterval(() => {
+
+			const logo = document.querySelector('.jw-icon.jw-icon-inline.jw-button-color.jw-reset.jw-logo-button');
+			if (logo) {
+			  logo.remove();
+			}
+			const palyBtn = document.querySelector('.jw-icon.jw-icon-inline.jw-button-color.jw-reset.jw-icon-playback');
+			const video = document.querySelector('.jw-video.jw-reset');
+			if (palyBtn && i < 1) {
+			  i = i + 1;
+			  palyBtn.click();
+			}
+
+		  }, 1000);
+		  localStorage.setItem('jwplayer.bandwidthEstimate', JSON.stringify(''));
+		</script>
+	  </div>
+</body>
+</html>
